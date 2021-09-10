@@ -25,7 +25,7 @@ namespace TechAssesment
 
         }
 
-        public Position Place (Ant ant, Position targetposition, bool emptyOldPosition )
+        public Position Place (Ant ant, Position targetPosition, bool emptyOldPosition )
         {
             if(emptyOldPosition)
             {
@@ -33,12 +33,28 @@ namespace TechAssesment
 
                 this[oldPosition] = null;
             }
+            this[targetPosition] = ant;
+            return targetPosition;
         }
 
         public Ant this[Position position]
         {
             get => _ants[position.Y, position.X];
             set => _ants[position.Y, position.X] = value;
+        }
+
+        public void update()
+        {
+            foreach( var ant in _ants)
+            {
+                Act();
+            }
+            
+        }
+
+        public void display()
+        {
+
         }
     }
 }

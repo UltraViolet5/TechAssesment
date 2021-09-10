@@ -19,5 +19,9 @@ namespace TechAssesment.Ants
             Position = MyColony.Place(this, position, false);
         }
 
+        public abstract void OnUpdate();
+
+        public abstract Char Cahracter { get; }
+
     }
 }
