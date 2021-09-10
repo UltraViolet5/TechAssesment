@@ -9,7 +9,7 @@ namespace TechAssesment.Ants
 {
     class Queen : Ant
     {
-        public override char Cahracter => => 'Q';
+        public override char Cahracter => 'Q';
 
         public override void OnUpdate()
         {

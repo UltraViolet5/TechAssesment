@@ -61,7 +61,8 @@ namespace TechAssesment
             {
                 for (int j = 0; j < Width; j++)
                 {
-
+                    Ant ant = _ants[i, j];
+                    sb.Append(ant?.Cahracter ?? ' ');
                 }
             }
 
@@ -87,6 +88,11 @@ namespace TechAssesment
                 });
                 Thread.Sleep(100);
             }
+
+        }
+
+        public void Act()
+        {
 
         }
     }

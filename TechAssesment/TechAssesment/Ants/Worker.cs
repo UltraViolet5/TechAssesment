@@ -9,7 +9,7 @@ namespace TechAssesment.Ants
 {
     class Worker : Ant
     {
-        public override char Cahracter => 'W'
+        public override char Cahracter => 'W';
 
         public override void OnUpdate()
         {
