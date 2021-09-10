@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TechAssesment.Utilities
 {
-    class Direction
+    public enum Direction
     {
+        North,
+        East,
+        South,
+        West
     }
 }

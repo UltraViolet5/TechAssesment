@@ -9,7 +9,7 @@ namespace TechAssesment.Ants
 {
     class Drone : Ant
     {
-        public override char Cahracter => throw new NotImplementedException();
+        public override char Cahracter => 'D';
 
         public override void OnUpdate()
         {

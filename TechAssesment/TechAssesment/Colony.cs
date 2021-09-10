@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TechAssesment.Ants;
 using TechAssesment.Utilities;
@@ -52,8 +53,40 @@ namespace TechAssesment
             
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+
+                }
+            }
+
+            return sb.ToString();
+        }
+
+
+
         public void display()
         {
+            List<Colony> colonie = new List<Colony>
+            {
+                new Colony(20),
+            };
+
+            while(true)
+            {
+                Console.Clear();
+                colonie.ForEach(c =>
+                {
+                    c.update();
+                    Console.WriteLine(c.ToString());
+                });
+                Thread.Sleep(100);
+            }
 
         }
     }
