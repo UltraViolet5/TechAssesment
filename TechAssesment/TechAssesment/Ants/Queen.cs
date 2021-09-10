@@ -7,7 +7,7 @@ using TechAssesment.Utilities;
 
 namespace TechAssesment.Ants
 {
-    class Queen : Ant
+    public class Queen : Ant
     {
         public override char Cahracter => 'Q';
 

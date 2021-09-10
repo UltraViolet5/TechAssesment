@@ -11,24 +11,30 @@ namespace TechAssesment
 {
     public class Colony
     {
-        public int Width {get;}
+        public int Width { get; }
 
         private readonly Ant[,] _ants;
+
+        public Queen queen { get; }
         public Colony(int witdth)
         {
             Width = witdth;
 
         }
 
-        public List<Ant> GenerateAnts(int workers,int soldiers, int drones )
+        public List<Ant> GenerateAnts(int workers, int soldiers, int drones)
         {
-            List<Position> positions;
+            List<Position> positions = GetFreePositions().ToList();
+
+            Position getRandmPosition
+
+
 
         }
 
-        public Position Place (Ant ant, Position targetPosition, bool emptyOldPosition )
+        public Position Place(Ant ant, Position targetPosition, bool emptyOldPosition)
         {
-            if(emptyOldPosition)
+            if (emptyOldPosition)
             {
                 Position oldPosition = ant.Position;
 
@@ -46,11 +52,11 @@ namespace TechAssesment
 
         public void update()
         {
-            foreach( var ant in _ants)
+            foreach (var ant in _ants)
             {
                 Act();
             }
-            
+
         }
 
         public override string ToString()
@@ -69,7 +75,27 @@ namespace TechAssesment
             return sb.ToString();
         }
 
+        public Position[] GetFreePositions()
+        {
+            List<Position> freePosition = new List<Position>;
 
+            for (int i = 0; i < Width; i++)
+            {
+                for (int j = 0; j <Width; j++)
+                {
+                    if(_ants[j,i]==null)
+                    {
+                   
+                       freePosition.Add(new Position(i, j));
+                       
+
+                    }
+                 
+                }
+            }
+
+            return freePosition.ToArray();
+        }
 
         public void display()
         {
