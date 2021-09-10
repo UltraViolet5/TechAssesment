@@ -26,7 +26,11 @@ namespace TechAssesment
         {
             List<Position> positions = GetFreePositions().ToList();
 
-            Position getRandmPosition
+            Position getRandmPosition()
+            {
+                Position randomizedPosition = positions[Extensions.Rand.Next(0, positions.Count)];
+                positions.Remove(randomizedPosition);
+            }
 
 
 
