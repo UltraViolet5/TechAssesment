@@ -17,7 +17,7 @@ namespace TechAssesment
 
 
 
-                var ch = Console.ReadKey(true);
+                var ch = Console.ReadKey();
                 if (ch.Key == ConsoleKey.Q || ch.Key == ConsoleKey.Enter)
                 {
                     Environment.Exit(0);
