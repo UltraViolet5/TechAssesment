@@ -30,10 +30,25 @@ namespace TechAssesment
             {
                 Position randomizedPosition = positions[Extensions.Rand.Next(0, positions.Count)];
                 positions.Remove(randomizedPosition);
+
+                return randomizedPosition;
             }
 
+            List<Ant> ants = new List<Ant>();
 
-
+            for (int i = 0; i < workers; i++)
+            {
+                ants.Add(new Worker(this, getRandmPosition()));
+            }
+            for (int i = 0; i < drones; i++)
+            {
+                ants.Add(new Drone(this, getRandmPosition()));
+            }
+            for (int i = 0; i <soldiers ; i++)
+            {
+                ants.Add(new Soldier(this, getRandmPosition()));
+            }
+            return ants;
         }
 
         public Position Place(Ant ant, Position targetPosition, bool emptyOldPosition)
@@ -81,7 +96,7 @@ namespace TechAssesment
 
         public Position[] GetFreePositions()
         {
-            List<Position> freePosition = new List<Position>;
+            List<Position> freePosition = new List<Position>();
 
             for (int i = 0; i < Width; i++)
             {
